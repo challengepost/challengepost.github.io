@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+
+    {% if site.google_analytics %}
+      <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '{{ site.google_analytics }}');
+      </script>
+    {% endif %}
+    <meta charset="UTF-8">
+
+    {% seo %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css" />
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+  </head>
+  <body>
+    <main id="content" class="content main-content" role="main">
+      <header>
+        <a href="https://devpost.com">
+          <img src="https://devpost-challengepost.netdna-ssl.com/assets/reimagine2/devpost-logo.svg" alt="">
+        </a>
+      </header>
+
+      <h1 class="is-size-2">
+        Rails exercise
+      </h1>
+
+      <p>
+        Let's build a mini-Devpost in Ruby on Rails!
+        <br>
+        This exercise is straightforward and will allow you to demonstrate your
+        knowledge of the Rails fundamentals.
+      </p>
+
+      <h2>
+        The application
+      </h2>
+
+      <h3>Business rules</h3>
+
+      <p>Let's get down to business:</p>
+
+      <ul>
+        <li>Users can create Competitions.</li>
+        <li>Competitions can have multiple prizes.</li>
+        <li>Users can be free users or paid users.</li>
+        <li>Free users can add a maximum of 3 prizes to each of their Competitions.</li>
+        <li>Paid users can add as many prizes as they want to each of their Competitions.</li>
+      </ul>
+
+      <h3>Suggested models</h3>
+
+      <p>Feel free to name these models or attributes as you see fit.</p>
+
+      <table>
+          <tr>
+              <th>Competition</th>
+              <th>Prize</th>
+              <th>User</th>
+          </tr>
+
+          <tr>
+              <td>
+                <p>
+                  <code>Name</code> (255 chars max)
+                </p>
+              </td>
+
+              <td>
+                <p>
+                  <code>Name</code> (1000 chars max)
+                </p>
+                <p>
+                  <code>Dollar value</code> (cannot be negative)
+                </p>
+              </td>
+
+              <td>
+                <p>
+                  <code>Full name</code>
+                </p>
+                <p>
+                  <code>Free or paid</code>
+                </p>
+              </td>
+          </tr>
+      </table>
+
+      <h3>Application pages</h3>
+
+      <h4>User page</h4>
+
+      <p>
+        It should display:
+
+        <ul>
+          <li>the <strong>user name</strong></li>
+          <li>
+            <p>
+              a <strong>list of their Competitions</strong> (don't bother with pagination)
+            </p>
+
+            <p>
+              For each Competition, display:
+
+              <ul>
+                <li>their <strong>name</strong></li>
+                <li>their <strong>total prize value</strong> (i.e. the sum of the prize values).</li>
+                <li>all their <strong>prizes</strong></li>
+              </ul>
+            </p>
+
+            <p>For each prize, display:</p>
+
+            <ul>
+              <li>their <strong>name</strong></li>
+              <li>their <strong>value</strong></li>
+            </ul>
+          </li>
+        </ul>
+
+        Keep performance in mind here ;)
+      </p>
+
+      <h4>Competition creation form</h4>
+
+      <p>
+        A single form allowing a signed in user to create a Competition along with its prizes.
+      </p>
+      <p>
+        Do not bother with Javascript at this stage, you can make it so there are a fixed number
+        of fields for adding prizes on page load.
+      </p>
+
+      <h4>Competition update form</h4>
+
+      <p>
+        Same as above, but to edit an existing Competition. This page should only be accessible to the Competition owner.
+        <br>
+        <small>ps: We're not asking you to make prizes deletable.</small>
+      </p>
+
+      <p>All the forms should display error messages for invalid inputs.</p>
+
+      <p>
+        Adding comments to your code to explain your choices,
+        or briefly mention alternatives you considered is encouraged.
+      </p>
+
+      <h3>How to submit?</h3>
+
+      <p>Simply host your code on GitHub, or Bitbucket, and share it with us: <a href="mailto:tech@devpost.com">tech@devpost.com</a>.</p>
+
+      <h3>Questions?</h3>
+
+      <p>Please don't hesitate to reach out to us if you have any questions: <a href="mailto:tech@devpost.com">tech@devpost.com</a>.</p>
+
+      <p>Good luck!</p>
+
+      <br>
+      <hr>
+
+      🐸
+    </main>
+  </body>
+</html>
